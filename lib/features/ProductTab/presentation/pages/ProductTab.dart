@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_task/core/utils/app_colors.dart';
 import 'package:test_task/features/ProductTab/presentation/manager/product_cubit.dart';
 import '../widgets/Product_item.dart';
 
@@ -17,6 +18,7 @@ class ProductTab extends StatelessWidget {
           return ProductCubit.get(context).products.isEmpty
               ? Center(child: const CircularProgressIndicator())
               : Scaffold(
+            backgroundColor: Colors.white,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
@@ -36,11 +38,13 @@ class ProductTab extends StatelessWidget {
                                 controller:
                                     ProductCubit.get(context).searchController,
                                 decoration: InputDecoration(
-                                  fillColor: Color(0xFFDEE2E7).withOpacity(.3),
+                                  fillColor: Colors.white,
                                   filled: true,
-                                  hintText: "Search",
+                                  hintText: "What do you search for",
                                   hintStyle:
-                                      Theme.of(context).textTheme.bodyMedium,
+                                      Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                        color: secondColor.withOpacity(.4)
+                                      ),
                                   prefixIcon: IconButton(
                                     onPressed: () {
                                       ProductCubit.get(context).getProducts(
@@ -48,19 +52,20 @@ class ProductTab extends StatelessWidget {
                                     },
                                     icon: Icon(
                                       Icons.search_sharp,
-                                      color: Colors.blue,
+                                      color:primaryColor,
+                                      size: 25,
                                     ),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Color(0xFFDEE2E7),
+                                        color:primaryColor,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.r)),
+                                      borderRadius: BorderRadius.circular(30.r)),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0xFFDEE2E7),
+                                      color: primaryColor,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.r),
+                                    borderRadius: BorderRadius.circular(30.r),
                                   ),
                                 ),
                               ),
@@ -72,18 +77,18 @@ class ProductTab extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 2.h,
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.height - 280.h,
+                        height: MediaQuery.of(context).size.height -180.h,
                         child: GridView.builder(
                           physics: const BouncingScrollPhysics(),
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                            mainAxisSpacing: 20,
-                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
                             mainAxisExtent:
-                                MediaQuery.of(context).size.height - 652.h,
+                                MediaQuery.of(context).size.height - 640.h,
                             crossAxisCount: 2,
                           ),
                           itemCount: ProductCubit.get(context).products.length,

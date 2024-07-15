@@ -16,6 +16,8 @@ class MyThemeData{
     textTheme: TextTheme(
       bodySmall:GoogleFonts.poppins(
         fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+
         color:secondColor,
       ),
       bodyMedium:GoogleFonts.poppins(
@@ -28,6 +30,10 @@ class MyThemeData{
         color:secondColor,
       ),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      elevation: 0
+    )
   );
 
   static ThemeData darkTheme=ThemeData(
@@ -40,6 +46,7 @@ class MyThemeData{
       bodySmall:GoogleFonts.poppins(
         fontSize: 14.sp,
         color:secondColor,
+        fontWeight: FontWeight.w400,
       ),
       bodyMedium:GoogleFonts.poppins(
         fontSize: 18.sp,
@@ -52,5 +59,9 @@ class MyThemeData{
         color:secondColor,
       ),
     ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.transparent,
+          elevation: 0
+      )
   );
 }

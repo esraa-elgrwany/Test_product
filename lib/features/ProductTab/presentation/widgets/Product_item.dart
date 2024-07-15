@@ -20,12 +20,16 @@ class _ProductListItemState extends State<ProductListItem> {
     return InkWell(
       onTap: () {},
       child: Card(
-        elevation: 8,
+        color: Colors.white,
+        elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.r),
+          side: BorderSide(
+            color: primaryColor.withOpacity(.2)
+          )
         ),
         child: Container(
-          height: 170.h,
+          height: 150.h,
           width: 191.w,
           alignment: Alignment.center,
           child: Stack(
@@ -39,14 +43,13 @@ class _ProductListItemState extends State<ProductListItem> {
                         topRight: Radius.circular(15.r)),
                     child: Image.network(
                       widget.item.images?[0] ?? "",
-                      height: 138.h,
+                      height: 110.h,
                       fit: BoxFit.cover,
                       width: double.infinity,
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
+                    padding:EdgeInsets.all(6),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -56,7 +59,7 @@ class _ProductListItemState extends State<ProductListItem> {
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyMedium!
+                                .bodySmall
                                 ),
                         Text(widget.item.description ?? "",
                             maxLines: 1,
@@ -65,7 +68,7 @@ class _ProductListItemState extends State<ProductListItem> {
                                 .textTheme
                                 .bodySmall),
                         SizedBox(
-                          height: 6.h,
+                          height: 4.h,
                         ),
                         Row(
                           children: [
@@ -85,7 +88,7 @@ class _ProductListItemState extends State<ProductListItem> {
                           ],
                         ),
                         SizedBox(
-                          height: 6.h,
+                          height: 4.h,
                         ),
                         Row(
                           children: [
@@ -101,7 +104,7 @@ class _ProductListItemState extends State<ProductListItem> {
                             Icon(
                               Icons.star,
                               color: const Color(0xffFDD835),
-                              size: 25.h,
+                              size: 20.h,
                             ),
                             Spacer(),
                             InkWell(
@@ -125,15 +128,17 @@ class _ProductListItemState extends State<ProductListItem> {
                 ],
               ),
               Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: InkWell(
                     onTap: () {},
                     child: CircleAvatar(
-                        radius: 15.r,
+                        radius: 18.r,
                         backgroundColor: Colors.white,
                         child: Center(
                           child: ImageIcon(
                             AssetImage("assets/images/Vector.png"),
+                            color: primaryColor,
+                            size: 40,
                             //color: Colors.blue,
                           ),
                         )),
