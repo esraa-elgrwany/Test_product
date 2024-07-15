@@ -17,9 +17,9 @@ class ProductModel {
     limit = json['limit'];
   }
   List<ProductData>? products;
-  int? total;
-  int? skip;
-  int? limit;
+  num? total;
+  num? skip;
+  num? limit;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -88,25 +88,25 @@ class ProductData {
     images = json['images'] != null ? json['images'].cast<String>() : [];
     thumbnail = json['thumbnail'];
   }
-  int? id;
+  num? id;
   String? title;
   String? description;
   String? category;
   double? price;
   double? discountPercentage;
   double? rating;
-  int? stock;
+  num? stock;
   List<String>? tags;
   String? brand;
   String? sku;
-  int? weight;
+  num? weight;
   Dimensions? dimensions;
   String? warrantyInformation;
   String? shippingInformation;
   String? availabilityStatus;
   List<Reviews>? reviews;
   String? returnPolicy;
-  int? minimumOrderQuantity;
+  num? minimumOrderQuantity;
   Meta? meta;
   List<String>? images;
   String? thumbnail;

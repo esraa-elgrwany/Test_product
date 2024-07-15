@@ -29,8 +29,10 @@ class ProductCubit extends Cubit<ProductState> {
     var result = await productsUseCase.call();
     result.fold((l) {
       emit(GetProductsErrorState(l));
+      print(l.errorMsg??"");
     }, (r) {
-      products = r.products ?? [];
+      products=r.products?? [];
+      print(products.length);
       emit(GetProductsSuccessState(r));
     });
   }
