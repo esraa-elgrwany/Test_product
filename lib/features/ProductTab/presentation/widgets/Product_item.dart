@@ -47,7 +47,7 @@ class _ProductListItemState extends State<ProductListItem> {
                     ),
                   ),
                   Padding(
-                    padding:EdgeInsets.all(6),
+                    padding:EdgeInsets.all(8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
