@@ -64,9 +64,15 @@ class ProductData {
     title = json['title'];
     description = json['description'];
     category = json['category'];
-    price = json['price'];
-    discountPercentage = json['discountPercentage'];
-    rating = json['rating'];
+    price = json['price'] is int
+    ? (json['price'] as int).toDouble()
+        : json['price'];
+    discountPercentage = json['discountPercentage'] is int
+    ? (json['discountPercentage'] as int).toDouble()
+        : json['discountPercentage'];
+    rating = json['rating'] is int
+    ? (json['rating'] as int).toDouble()
+        : json['rating'];
     stock = json['stock'];
     tags = json['tags'] != null ? json['tags'].cast<String>() : [];
     brand = json['brand'];
@@ -214,10 +220,16 @@ class Dimensions {
       this.height, 
       this.depth,});
 
-  Dimensions.fromJson(dynamic json) {
-    width = json['width'];
-    height = json['height'];
-    depth = json['depth'];
+  Dimensions.fromJson(Map<String,dynamic>json) {
+    width = json['width'] is int
+        ? (json['width'] as int).toDouble()
+        : json['width'];
+    height = json['height'] is int
+        ? (json['height'] as int).toDouble()
+        : json['height'];
+    depth = json['depth'] is int
+        ? (json['depth'] as int).toDouble()
+        : json['depth'];
   }
   double? width;
   double? height;

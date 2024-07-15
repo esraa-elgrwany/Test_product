@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_task/features/ProductTab/presentation/pages/ProductTab.dart';
 
 
+import 'config/theming/myTheme.dart';
 import 'core/utils/observer.dart';
 import 'features/ProductTab/presentation/manager/product_cubit.dart';
 
@@ -36,8 +37,9 @@ class MyApp extends StatelessWidget {
                   initialRoute: ProductTab.routeName,
                   routes: {
                     ProductTab.routeName: (context) => ProductTab(),
-
                   },
+                  theme: MyThemeData.lightTheme,
+                  darkTheme: MyThemeData.darkTheme,
                 ),
           );
         },
