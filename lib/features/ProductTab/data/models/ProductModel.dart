@@ -92,9 +92,9 @@ class ProductData {
   String? title;
   String? description;
   String? category;
-  double? price;
-  double? discountPercentage;
-  double? rating;
+  num? price;
+  num? discountPercentage;
+  num? rating;
   num? stock;
   List<String>? tags;
   String? brand;

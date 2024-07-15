@@ -16,6 +16,7 @@ class ProductRemoteDsImpl implements ProductRemoteDs {
     try {
       Response response = await apiManager.getData(EndPoints.products);
       ProductModel productsModel = ProductModel.fromJson(response.data);
+      print(productsModel.products?.length);
       return Right(productsModel);
     } catch (e) {
       return Left(ServerFailure(e.toString()));
