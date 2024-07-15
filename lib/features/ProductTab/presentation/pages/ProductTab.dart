@@ -76,9 +76,7 @@ class ProductTab extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 2.h,
-                      ),
+
                       Container(
                         height: MediaQuery.of(context).size.height -180.h,
                         child: GridView.builder(
@@ -88,7 +86,7 @@ class ProductTab extends StatelessWidget {
                             mainAxisSpacing: 10,
                             crossAxisSpacing: 10,
                             mainAxisExtent:
-                                MediaQuery.of(context).size.height - 640.h,
+                                MediaQuery.of(context).size.height - 645.h,
                             crossAxisCount: 2,
                           ),
                           itemCount: ProductCubit.get(context).products.length,

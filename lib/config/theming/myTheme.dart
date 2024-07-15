@@ -16,17 +16,18 @@ class MyThemeData{
     textTheme: TextTheme(
       bodySmall:GoogleFonts.poppins(
         fontSize: 14.sp,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
 
         color:secondColor,
       ),
       bodyMedium:GoogleFonts.poppins(
         fontSize: 18.sp,
         color:secondColor,
+        fontWeight: FontWeight.w400,
       ),
       bodyLarge: GoogleFonts.poppins(
         fontSize: 20.sp,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
         color:secondColor,
       ),
     ),

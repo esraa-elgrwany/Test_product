@@ -29,8 +29,6 @@ class _ProductListItemState extends State<ProductListItem> {
           )
         ),
         child: Container(
-          height: 150.h,
-          width: 191.w,
           alignment: Alignment.center,
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
@@ -88,7 +86,7 @@ class _ProductListItemState extends State<ProductListItem> {
                           ],
                         ),
                         SizedBox(
-                          height: 4.h,
+                          height:2.h,
                         ),
                         Row(
                           children: [
